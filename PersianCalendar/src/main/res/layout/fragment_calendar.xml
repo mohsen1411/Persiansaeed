@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container"
+    >
+
+
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/about_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:ignore="RedundantNamespace">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/calendar_pager"
+            android:layout_marginTop="20dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/grid_calendar_height" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_margin"
+            app:cardBackgroundColor="#00ffffff">
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00ffffff"
+                android:orientation="vertical"
+                app:divider="?attr/appDivider"
+                app:dividerPadding="@dimen/divider_margin"
+                app:showDividers="middle">
+
+                <RelativeLayout
+                    android:alpha="0.7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sefed"
+                    android:padding="@dimen/card_padding">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/today"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="@string/today"
+                        android:textColor="?attr/colorTextPrimary"
+                        android:textSize="@dimen/text_size_title"
+                        android:visibility="gone" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/today_icon"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        app:srcCompat="@drawable/ic_undo"
+                        android:tint="?attr/colorTextPrimary"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/today"
+                        android:layout_marginLeft="4dp"
+                        android:visibility="gone" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/week_day_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="?attr/colorTextPrimary"
+                        android:textSize="@dimen/text_size_title" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sefed"
+                    android:alpha="0.7"
+                    android:gravity="right"
+                    android:layout_marginTop="4dp"
+                    android:padding="@dimen/card_padding">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="@dimen/icon_size"
+                        android:layout_height="@dimen/icon_size"
+                        android:layout_marginLeft="@dimen/icon_margin"
+                        android:layout_toRightOf="@+id/dayInfoContainer"
+                        android:gravity="center"
+                        app:srcCompat="@drawable/ic_event"
+                        android:visibility="gone"
+                        android:tint="?attr/colorIcon"
+                        android:id="@+id/appCompatImageView" />
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:id="@+id/dayInfoContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/shamsi_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="?attr/colorTextNormal"
+                            android:textSize="@dimen/text_size_description" />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/gregorian_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:textColor="?attr/colorTextNormal"
+                        android:textSize="@dimen/text_size_description"
+                        android:layout_alignBaseline="@+id/islamic_date"
+                        android:layout_alignBottom="@+id/islamic_date"
+                        android:layout_toLeftOf="@+id/dayInfoContainer"
+                        android:layout_toStartOf="@+id/dayInfoContainer" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/islamic_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="37dp"
+                        android:layout_marginRight="37dp"
+                        android:textColor="?attr/colorTextNormal"
+                        android:textSize="@dimen/text_size_description"
+                        android:layout_alignParentTop="true"
+                        android:layout_toLeftOf="@+id/gregorian_date"
+                        android:layout_toStartOf="@+id/gregorian_date" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardEvent"
+            android:alpha="0.7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_margin"
+            app:cardBackgroundColor="?attr/colorCard"
+            >
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:orientation="vertical"
+                app:dividerPadding="@dimen/divider_margin"
+                app:divider="?attr/appDivider"
+                app:showDividers="middle">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:background="@drawable/sefed"
+                    android:padding="@dimen/card_padding">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="@dimen/icon_size"
+                        android:layout_height="@dimen/icon_size"
+                        android:layout_marginLeft="@dimen/icon_margin"
+                        android:layout_toRightOf="@+id/eventContainer"
+                        android:gravity="center"
+                        app:srcCompat="@drawable/ic_event_note"
+                        android:tint="?attr/colorIcon" />
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:id="@+id/eventContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:layout_marginRight="50dp"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/holiday_title"
+                            android:visibility="gone"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="?attr/colorTextHoliday"
+                            android:textSize="@dimen/text_size_description" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/event_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:textColor="?attr/colorTextNormal"
+                            android:textSize="@dimen/text_size_description" />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+
+                android:padding="@dimen/card_padding">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/event_card_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="33dp"
+                    android:text="@string/events"
+                    android:textColor="?attr/colorTextPrimary"
+                    android:textSize="@dimen/text_size_title" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:alpha="0.7"
+            android:id="@+id/owghat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_margin"
+            app:cardBackgroundColor="?attr/colorCard"
+            >
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:orientation="vertical"
+                app:divider="?attr/appDivider"
+                app:dividerPadding="@dimen/divider_margin"
+                app:showDividers="middle">
+
+                <!-- title: prayer times -->
+                <RelativeLayout
+                    android:background="@drawable/sefed"
+                    android:layoutDirection="ltr"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+
+                    android:orientation="horizontal"
+                    android:padding="@dimen/card_padding">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/more_owghat"
+                        android:visibility="gone"
+                        android:layout_width="@dimen/icon_size"
+                        android:layout_height="@dimen/icon_size"
+                        app:srcCompat="@drawable/ic_keyboard_arrow_down"
+                        android:tint="?attr/colorIcon" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/owghat_text"
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/owghat"
+                        android:textColor="?attr/colorTextPrimary"
+                        android:textSize="@dimen/text_size_title" />
+
+                    <RelativeLayout
+                        android:id="@+id/fajrLayout"
+                        android:layout_width="30dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/padding_item"
+                        android:paddingTop="@dimen/padding_item"
+                        android:layout_marginLeft="5dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@+id/sunriseLayout"
+                        android:layout_toEndOf="@+id/sunriseLayout">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/iconMorning"
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            android:layout_marginLeft="@dimen/icon_margin"
+                            android:layout_toRightOf="@+id/owghat1TextContainer"
+                            android:gravity="center"
+                            android:tint="?attr/colorIcon"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_brightness_4" />
+
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:id="@+id/owghat1TextContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/fajrText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/azan1"
+                                android:gravity="center"
+
+                                android:textColor="?attr/colorTextSecond"
+                                android:textSize="@dimen/text_size_note" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/fajr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+
+                                android:layout_marginTop="@dimen/item_calendar_margin_top"
+                                android:textColor="?attr/colorTextNormal"
+                                android:textSize="@dimen/text_size_description" />
+
+                        </android.support.v7.widget.LinearLayoutCompat>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/sunriseLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/padding_item"
+                        android:paddingTop="@dimen/padding_item"
+                        android:layout_marginLeft="5dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/dhuhrLayout">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+
+                            android:layout_height="@dimen/icon_size"
+                            android:layout_marginLeft="@dimen/icon_margin"
+                            android:layout_toRightOf="@+id/aftab1TextContainer"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:tint="?attr/colorIcon"
+                            app:srcCompat="@drawable/ic_brightness_7" />
+
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:id="@+id/aftab1TextContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/sunriseText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/aftab1"
+                                android:gravity="center"
+
+                                android:textColor="?attr/colorTextSecond"
+                                android:textSize="@dimen/text_size_note" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/sunrise"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/item_calendar_margin_top"
+                                android:textColor="?attr/colorTextNormal"
+                                android:textSize="@dimen/text_size_description" />
+
+                        </android.support.v7.widget.LinearLayoutCompat>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/dhuhrLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/padding_item"
+                        android:paddingTop="@dimen/padding_item"
+                        android:layout_marginLeft="10dp"
+                        android:layout_alignTop="@+id/fajrLayout"
+                        android:layout_toRightOf="@+id/asrLayout"
+                        android:layout_toEndOf="@+id/asrLayout"
+                        >
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            android:gravity="center"
+                            android:tint="?attr/colorIcon"
+                            app:srcCompat="@drawable/ic_brightness_5"
+                            android:layout_alignParentTop="true"
+                            android:visibility="gone"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true" />
+
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:id="@+id/owghat3TextContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/dhuhrText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/azan2"
+                                android:textColor="?attr/colorTextSecond"
+                                android:textSize="@dimen/text_size_note" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/dhuhr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/item_calendar_margin_top"
+                                android:textColor="?attr/colorTextNormal"
+                                android:textSize="@dimen/text_size_description" />
+
+                        </android.support.v7.widget.LinearLayoutCompat>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/asrLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/padding_item"
+                        android:paddingTop="@dimen/padding_item"
+                        android:layout_marginLeft="10dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/sunsetLayout">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            android:layout_marginLeft="@dimen/icon_margin"
+                            android:layout_toRightOf="@+id/owghat4TextContainer"
+                            android:gravity="center"
+                            android:tint="?attr/colorIcon"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_brightness_5" />
+
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:id="@+id/owghat4TextContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/asrText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/azan3"
+                                android:textColor="?attr/colorTextSecond"
+                                android:textSize="@dimen/text_size_note" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/asr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/item_calendar_margin_top"
+                                android:textColor="?attr/colorTextNormal"
+                                android:textSize="@dimen/text_size_description" />
+
+                        </android.support.v7.widget.LinearLayoutCompat>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/sunsetLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/padding_item"
+                        android:paddingTop="@dimen/padding_item"
+                        android:layout_alignTop="@+id/fajrLayout"
+                        android:layout_toEndOf="@+id/maghribLayout"
+                        android:layout_toRightOf="@+id/maghribLayout">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+
+                            android:layout_marginLeft="@dimen/icon_margin"
+                            android:layout_toRightOf="@+id/owghat5TextContainer"
+                            android:gravity="center"
+                            android:tint="?attr/colorIcon"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_brightness_6" />
+
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:id="@+id/owghat5TextContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/sunsetText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/aftab2"
+                                android:textColor="?attr/colorTextSecond"
+                                android:textSize="@dimen/text_size_note" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/sunset"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/item_calendar_margin_top"
+                                android:textColor="?attr/colorTextNormal"
+                                android:textSize="@dimen/text_size_description" />
+
+                        </android.support.v7.widget.LinearLayoutCompat>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/maghribLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/padding_item"
+                        android:paddingTop="@dimen/padding_item"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/ishaLayout">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            android:layout_marginLeft="@dimen/icon_margin"
+                            android:layout_toRightOf="@+id/owghat6TextContainer"
+                            android:gravity="center"
+                            android:tint="?attr/colorIcon"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_brightness_3" />
+
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:id="@+id/owghat6TextContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/maghribText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/azan4"
+                                android:textColor="?attr/colorTextSecond"
+                                android:textSize="@dimen/text_size_note" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/maghrib"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/item_calendar_margin_top"
+                                android:textColor="?attr/colorTextNormal"
+                                android:textSize="@dimen/text_size_description" />
+
+                        </android.support.v7.widget.LinearLayoutCompat>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/ishaLayout"
+                        android:layout_width="40dp"
+                        android:padding="0dp"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/padding_item"
+                        android:paddingTop="@dimen/padding_item"
+                        android:layout_marginLeft="5dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/midnightLayout">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            android:layout_marginLeft="@dimen/icon_margin"
+                            android:layout_toRightOf="@+id/owghat7TextContainer"
+                            android:gravity="center"
+                            android:tint="?attr/colorIcon"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_brightness_3" />
+
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:id="@+id/owghat7TextContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/ishaText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/azan5"
+                                android:textColor="?attr/colorTextSecond"
+                                android:textSize="@dimen/text_size_note" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/isgha"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/item_calendar_margin_top"
+                                android:textColor="?attr/colorTextNormal"
+                                android:textSize="@dimen/text_size_description" />
+
+                        </android.support.v7.widget.LinearLayoutCompat>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+
+                        android:id="@+id/midnightLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/padding_item"
+                        android:paddingTop="@dimen/padding_item"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="@dimen/icon_size"
+                            android:layout_height="@dimen/icon_size"
+                            android:layout_marginLeft="@dimen/icon_margin"
+                            android:layout_toRightOf="@+id/owghat8TextContainer"
+                            android:gravity="center"
+                            android:tint="?attr/colorIcon"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_brightness_2"
+                            android:id="@+id/appCompatImageView2" />
+
+                        <android.support.v7.widget.LinearLayoutCompat
+                            android:id="@+id/owghat8TextContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/midnightText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toEndOf="@+id/appCompatImageView2"
+                                android:layout_toRightOf="@+id/appCompatImageView2"
+                                android:text="@string/aftab3"
+                                android:textColor="?attr/colorTextSecond"
+                                android:textSize="@dimen/text_size_note" />
+
+                            <android.support.v7.widget.AppCompatTextView
+                                android:id="@+id/midnight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/item_calendar_margin_top"
+                                android:textColor="?attr/colorTextNormal"
+                                android:textSize="@dimen/text_size_description" />
+
+                        </android.support.v7.widget.LinearLayoutCompat>
+
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <!-- actual content -->
+                <!--<android.support.v7.widget.LinearLayoutCompat-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:gravity="right"-->
+                <!--android:orientation="vertical"-->
+                <!---->
+                <!--android:paddingBottom="@dimen/padding_item"-->
+                <!--android:paddingLeft="@dimen/card_padding"-->
+                <!--android:paddingRight="@dimen/card_padding"-->
+                <!--android:paddingTop="@dimen/padding_item"-->
+                <!--app:divider="?attr/appDivider"-->
+                <!--app:dividerPadding="@dimen/divider_margin2"-->
+                <!--app:showDividers="middle">-->
+
+                <!--&lt;!&ndash;morning&ndash;&gt;-->
+
+                <!--</android.support.v7.widget.LinearLayoutCompat>-->
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+        </android.support.v7.widget.CardView>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+</ScrollView>
+
+
+
+
+</RelativeLayout>
