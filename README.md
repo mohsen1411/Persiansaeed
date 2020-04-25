@@ -9,10 +9,10 @@ Android Persian Calendar [![Build Status](https://travis-ci.org/ebraminio/DroidP
 نسخه اصلی برنامه:
 https://cafebazaar.ir/app/com.byagowi.persiancalendar
 -----------------------------------------
-توضیحات سورس نسخه ویرایش شده (تقویم نگین):
+توضیحات سورس نسخه ویرایش شده تقویم فارسی 99 هوشمند
 این برنامه رایگان و متن‌باز نوشته شده‌است و کد آن را می‌توانید از لینک زیر دریافت کنید:
     
-    https://github.com/mohsen1411/Persiansaeed/releases
+https://github.com/mohsen1411/Persiansaeed/releases
     
 تقویم ساده، رایگان و آزاد اندروید به همراه ویجت و حمایت از DashClock<br />
 برای دریافت و نصب بر برگهٔ releases در بالای صفحه کلیک کنید.</div>
