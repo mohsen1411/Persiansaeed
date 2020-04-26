@@ -1,6 +1,6 @@
 Android Persian Calendar [![Build Status](https://travis-ci.org/ebraminio/DroidPersianCalendar.svg?branch=master)](https://travis-ci.org/ebraminio/DroidPersianCalendar)  [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ebraminio/DroidPersianCalendar)
 =============================
-<div lang="fa" dir="rtl">تقویم فارسی اندروید<br />
+<div lang="fa" dir="rtl">تقویم فارسی ۹۹ (هوشمند)<br />
     
     
     
@@ -9,7 +9,7 @@ Android Persian Calendar [![Build Status](https://travis-ci.org/ebraminio/DroidP
 نسخه اصلی برنامه:
 https://cafebazaar.ir/app/com.byagowi.persiancalendar
 -----------------------------------------
-توضیحات سورس نسخه ویرایش شده تقویم فارسی 99 هوشمند
+توضیحات سورس نسخه ویرایش شده تقویم فارسی ۹۹ (هوشمند)
 این برنامه رایگان و متن‌باز نوشته شده‌است و کد آن را می‌توانید از لینک زیر دریافت کنید:
     
 https://github.com/mohsen1411/Persiansaeed/releases
