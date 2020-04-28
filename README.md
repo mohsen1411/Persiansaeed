@@ -2,8 +2,6 @@ Android Persian Calendar [![Build Status](https://travis-ci.org/ebraminio/DroidP
 =============================
 <div lang="fa" dir="rtl">تقویم فارسی ۹۹ (هوشمند)<br />
     
-   
-    توضیحات سورس اصلی :
 این برنامه به صورت رایگان و متن‌باز نوشته شده‌است و سورس کد اصلی آن را می‌توانید از https://github.com/persian-calendar/DroidPersianCalendar دریافت کنید.
 نسخه اصلی سورس برنامه
 https://github.com/persian-calendar/DroidPersianCalendar
