@@ -21,13 +21,12 @@ https://cafebazaar.ir/app/com.byagowi.persiancalendar
 Download
 -----------------------------
 <ul>
-    <li> <a href="http://cafebazaar.ir/app/com.byagowi.persiancalendar">
-        <img src = "https://s.cafebazaar.ir/2/images/badge-new.png" with = "100px" height = "400px" alt = ""/>
+    <li> <a href="https://cafebazaar.ir/app/com.mohsen.persiancalendar">
+        <img src = "https://s.cafebazaar.ir/2/images/badge-new.png" with = "400px" height = "100px" alt = ""/>
         دانلود تقویم فارسی 99 هوشمند از کافه بازار</a> </li>
     <li> <a href="https://github.com/mohsen1411/Persiansaeed">
-        <img src = "https://pngimg.com/uploads/github/github_PNG30.png" with = "100px" height = "400px" alt = ""/>
-       دانلود سورس تقویم فارسی 99 هوشمند از گیت هاب </a> </li>
-    
+        <img src = "https://pngimg.com/uploads/github/github_PNG30.png" with = "400px" height = "100px" alt = ""/>
+       دانلود سورس تقویم فارسی 99 هوشمند از گیت هاب </a> </li>    
 </ul>
 
 License
